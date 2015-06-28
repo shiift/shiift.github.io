@@ -28586,7 +28586,7 @@
 						React.createElement(
 							'blockquote',
 							null,
-							'"Seeking an opportunity to further develop my skills as an engineer through programming, diagnostics, and research while working toward my goal of becoming a software engineering manager."'
+							'"Seeking an opportunity to further develop my skills as an engineer through real-world experience in software development and research while working toward my goal of becoming a software engineering manager"'
 						),
 						React.createElement(
 							Button,
