@@ -6,7 +6,7 @@ var {Row, Col, Well, Button} = require('react-bootstrap');
 var TopWell = module.exports = React.createClass({
 	render: function () {
 		return (
-			<Well>
+			<Well id="home">
 			    <h1>William Song Dickson</h1>
 			    <Row>
 			        <Col md={3} className='text-center'>
