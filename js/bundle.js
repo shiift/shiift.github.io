@@ -28623,6 +28623,9 @@
 		displayName: 'exports',
 	
 		render: function render() {
+			var d = new Date();
+			var yr = d.getFullYear();
+			var mn = d.getMonth();
 			return React.createElement(
 				Well,
 				null,
@@ -28670,41 +28673,45 @@
 											{ className: 'col-sm-8 text-right' },
 											React.createElement(
 												Label,
-												{ className: 'padded-label', bsStyle: 'success' },
+												{ className: 'padded-label', bsStyle: 'danger' },
 												'Front-End SDE Intern'
 											),
 											React.createElement(
 												Label,
-												{ className: 'padded-label', bsStyle: 'info' },
+												{ className: 'padded-label', bsStyle: 'warning' },
 												'Summer 2015 - Present'
 											)
 										)
 									)
 								) },
-							'I currently work for an online marketplace called ',
 							React.createElement(
-								'a',
-								{ href: 'https://www.1stdibs.com' },
-								'1stdibs.com'
-							),
-							', which specializes in antiques and fine art. My responsibilities at 1stdibs include:',
-							React.createElement(
-								'ul',
+								'div',
 								null,
+								'I currently work for an online marketplace called ',
 								React.createElement(
-									'li',
-									null,
-									'Implmeneting design changes and new website features'
+									'a',
+									{ href: 'https://www.1stdibs.com' },
+									'1stdibs.com'
 								),
+								', which specializes in antiques and fine art. My responsibilities at 1stdibs include:',
 								React.createElement(
-									'li',
+									'ul',
 									null,
-									'Writing unit tests in Jasmine and more specialized integration tests (to verify back-end service behavior)'
-								),
-								React.createElement(
-									'li',
-									null,
-									'Using React, Backbone, and Node.js to create tools for developers (Chrome extensions, test result database, etc.)'
+									React.createElement(
+										'li',
+										null,
+										'Implmeneting design changes and new website features'
+									),
+									React.createElement(
+										'li',
+										null,
+										'Writing unit tests in Jasmine and more specialized integration tests (to verify back-end service behavior)'
+									),
+									React.createElement(
+										'li',
+										null,
+										'Using React, Backbone, and Node.js to create tools for developers (Chrome extensions, test result database, etc.)'
+									)
 								)
 							)
 						)
@@ -28716,37 +28723,64 @@
 					React.createElement(
 						Col,
 						{ md: 8, mdOffset: 4 },
-						React.createElement(Panel, { bsStyle: 'primary', className: 'panel-left', header: React.createElement(
-								'div',
-								null,
-								React.createElement(
-									Row,
+						React.createElement(
+							Panel,
+							{ bsStyle: 'primary', className: 'panel-left', header: React.createElement(
+									'div',
 									null,
 									React.createElement(
-										Col,
-										{ sm: 4 },
+										Row,
+										null,
 										React.createElement(
-											'a',
-											{ href: 'http://www.utc.com' },
-											'United Technologies'
-										)
-									),
-									React.createElement(
-										'div',
-										{ className: 'col-sm-8 text-right' },
-										React.createElement(
-											Label,
-											{ className: 'padded-label', bsStyle: 'success' },
-											'SDE Intern'
+											Col,
+											{ sm: 4 },
+											React.createElement(
+												'a',
+												{ href: 'http://www.utc.com' },
+												'United Technologies'
+											)
 										),
 										React.createElement(
-											Label,
-											{ className: 'padded-label', bsStyle: 'info' },
-											'May 2013 - February 2015'
+											'div',
+											{ className: 'col-sm-8 text-right' },
+											React.createElement(
+												Label,
+												{ className: 'padded-label', bsStyle: 'danger' },
+												'SDE Intern'
+											),
+											React.createElement(
+												Label,
+												{ className: 'padded-label', bsStyle: 'warning' },
+												'May 2013 - February 2015'
+											)
 										)
 									)
+								) },
+							React.createElement(
+								'div',
+								null,
+								'During the summers of my freshman and sophomore years at UConn I worked at United Technologies Aerospace Systems where I worked on the F-15 weapons control system called the PACS (Programmable Armament Control Set). This system is an embedded system that has been developed by United Technologies for many contries for decades. I was fortunate enough to get an opportunity to work with a very experienced team of embedded software engineers and testers to work on the newest version of this system for a few different countries. My responsibilities included:',
+								React.createElement(
+									'ul',
+									null,
+									React.createElement(
+										'li',
+										null,
+										'Extensively testing the PACS unit for software and hardware bugs through autorig simulations and test log analysis.'
+									),
+									React.createElement(
+										'li',
+										null,
+										'Writing macros, automated CTLS scripts and Perl scripts for testing of the PACS unit and presenting results at weekly meetings.'
+									),
+									React.createElement(
+										'li',
+										null,
+										'Discussing various requirements and code issues with the project manager and test lead.'
+									)
 								)
-							) })
+							)
+						)
 					)
 				),
 				React.createElement('div', { id: 'resume' })
