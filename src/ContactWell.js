@@ -14,7 +14,11 @@ var WorkWell = module.exports = React.createClass({
 	validate: function (value) {
 		this.setState({valid: value});
 		if (value) {
-  			document.getElementById('formAction').action = "mailto:liam@songdickson.com";
+			var email = 'mail';
+			email += 'to'
+			email += ':liam'
+			email += '@songdickson.com'
+  			document.getElementById('formAction').action = email;
 		}
 	},
 	render: function () {
