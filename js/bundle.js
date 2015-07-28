@@ -40422,7 +40422,7 @@
 		},
 		emailLink: function emailLink() {
 			if (this.state.valid) {
-				window.location.href = 'mailto:liam@songdickson.com';
+				document.getElementByID('submitButton').href = 'mailto:liam@songdickson.com';
 			}
 		},
 		validate: function validate(value) {
@@ -40442,7 +40442,7 @@
 					refs: 'recaptcha',
 					sitekey: '6LduPvoSAAAAAOAlarIyHgQuhufOPoRdsju1STBC',
 					onChange: this.validate }),
-				React.createElement(ButtonInput, { disabled: !this.state.valid, onClick: this.emailLink, bsStyle: 'primary', type: 'submit', value: 'Send an Email' })
+				React.createElement(ButtonInput, { id: 'submitButton', disabled: !this.state.valid, onClick: this.emailLink, bsStyle: 'primary', type: 'submit', value: 'Send an Email' })
 			);
 		}
 	});

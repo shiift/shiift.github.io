@@ -13,7 +13,7 @@ var WorkWell = module.exports = React.createClass({
   	},
   	emailLink: function () {
   		if (this.state.valid) {
-  			window.location.href = "mailto:liam@songdickson.com";
+  			document.getElementByID('submitButton').href = "mailto:liam@songdickson.com";
   		}
   	},
 	validate: function (value) {
@@ -28,7 +28,7 @@ var WorkWell = module.exports = React.createClass({
 					refs="recaptcha"
 					sitekey="6LduPvoSAAAAAOAlarIyHgQuhufOPoRdsju1STBC"
 					onChange={this.validate}  />
-				<ButtonInput disabled={!this.state.valid} onClick={this.emailLink} bsStyle='primary' type='submit' value='Send an Email' />
+				<ButtonInput id='submitButton' disabled={!this.state.valid} onClick={this.emailLink} bsStyle='primary' type='submit' value='Send an Email' />
 			</Well>
 		)
 	}
