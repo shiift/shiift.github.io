@@ -40408,7 +40408,8 @@
 	var _require = __webpack_require__(160);
 	
 	var Well = _require.Well;
-	var Button = _require.Button;
+	var Input = _require.Input;
+	var ButtonInput = _require.ButtonInput;
 	
 	var partial = __webpack_require__(235);
 	var WorkCell = __webpack_require__(241);
@@ -40424,6 +40425,19 @@
 					'h2',
 					{ id: 'contact' },
 					'Contact Me'
+				),
+				React.createElement(
+					'form',
+					null,
+					React.createElement(Input, { type: 'text', label: 'Name' }),
+					React.createElement(Input, { type: 'email', label: 'Email' }),
+					React.createElement(Input, { className: 'contact-message', type: 'textarea', label: 'Message' }),
+					React.createElement(
+						'div',
+						{ className: 'contact-recaptcha' },
+						React.createElement('div', { className: 'g-recaptcha', 'data-sitekey': '6LduPvoSAAAAAOAlarIyHgQuhufOPoRdsju1STBC' })
+					),
+					React.createElement(ButtonInput, { bsStyle: 'primary', type: 'submit', value: 'Submit' })
 				)
 			);
 		}

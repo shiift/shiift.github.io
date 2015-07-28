@@ -20,6 +20,14 @@
 	height: 950px;
 }
 
+textarea.form-control.contact-message {
+	height: 300px;
+}
+
+.contact-recaptcha {
+	margin-bottom: 10px;
+}
+
 @media only screen and (max-width : 992px) {
 	.resume-pdf {
 		width: 100%;
