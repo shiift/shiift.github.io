@@ -31,7 +31,7 @@ var WorkWell = module.exports = React.createClass({
 						onChange={_.partial(this.validate,'captcha')}  />
 					<ButtonInput disabled={
 						!(this.state.name && this.state.email && this.state.message && this.state.captcha)
-					} bsStyle='primary' type='submit' value='Submit' />
+					} bsStyle='primary' type='submit' value='Send' />
 				</form>
 			</Well>
 		)

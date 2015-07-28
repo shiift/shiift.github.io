@@ -40445,7 +40445,7 @@
 						refs: 'recaptcha',
 						sitekey: '6LduPvoSAAAAAOAlarIyHgQuhufOPoRdsju1STBC',
 						onChange: _.partial(this.validate, 'captcha') }),
-					React.createElement(ButtonInput, { disabled: !(this.state.name && this.state.email && this.state.message && this.state.captcha), bsStyle: 'primary', type: 'submit', value: 'Submit' })
+					React.createElement(ButtonInput, { disabled: !(this.state.name && this.state.email && this.state.message && this.state.captcha), bsStyle: 'primary', type: 'submit', value: 'Send' })
 				)
 			);
 		}
