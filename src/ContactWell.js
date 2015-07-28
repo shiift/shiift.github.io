@@ -6,6 +6,7 @@ var {Well, Input, ButtonInput} = require('react-bootstrap');
 var ReCATPCHA = require("react-google-recaptcha");
 var partial = require('lodash.partial');
 var WorkCell = require('./WorkCell');
+require('helpers/mailhider');
 
 var WorkWell = module.exports = React.createClass({
 	getInitialState: function() {
@@ -23,7 +24,7 @@ var WorkWell = module.exports = React.createClass({
 					refs="recaptcha"
 					sitekey="6LduPvoSAAAAAOAlarIyHgQuhufOPoRdsju1STBC"
 					onChange={this.validate}  />
-				<ButtonInput disabled={!this.state.valid} bsStyle='primary' type='submit' value='Send' />
+				<ButtonInput disabled={!this.state.valid} href={this.state.valid ? 'liam@songdickson.com' : '#'} bsStyle='primary' type='submit' value='Send an Email' />
 			</Well>
 		)
 	}

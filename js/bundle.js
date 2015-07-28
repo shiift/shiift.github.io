@@ -40413,6 +40413,7 @@
 	var ReCATPCHA = __webpack_require__(247);
 	var partial = __webpack_require__(238);
 	var WorkCell = __webpack_require__(244);
+	__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"helpers/mailhider\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	
 	var WorkWell = module.exports = React.createClass({
 		displayName: 'exports',
@@ -40437,7 +40438,7 @@
 					refs: 'recaptcha',
 					sitekey: '6LduPvoSAAAAAOAlarIyHgQuhufOPoRdsju1STBC',
 					onChange: this.validate }),
-				React.createElement(ButtonInput, { disabled: !this.state.valid, bsStyle: 'primary', type: 'submit', value: 'Send' })
+				React.createElement(ButtonInput, { disabled: !this.state.valid, href: this.state.valid ? 'liam@songdickson.com' : '#', bsStyle: 'primary', type: 'submit', value: 'Send an Email' })
 			);
 		}
 	});
