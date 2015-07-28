@@ -40407,7 +40407,6 @@
 	var _require = __webpack_require__(160);
 	
 	var Well = _require.Well;
-	var Input = _require.Input;
 	var ButtonInput = _require.ButtonInput;
 	
 	var ReCATPCHA = __webpack_require__(247);
@@ -40418,15 +40417,13 @@
 		displayName: 'exports',
 	
 		getInitialState: function getInitialState() {
-			return { name: false, email: false, message: false, captcha: false };
-		},
-		emailLink: function emailLink() {
-			if (this.state.valid) {
-				document.getElementByID('submitButton').href = 'mailto:liam@songdickson.com';
-			}
+			return { valid: false };
 		},
 		validate: function validate(value) {
 			this.setState({ valid: value });
+			if (value) {
+				document.getElementById('formAction').action = 'mailto:liam@songdickson.com';
+			}
 		},
 		render: function render() {
 			return React.createElement(
@@ -40437,12 +40434,16 @@
 					{ id: 'contact' },
 					'Contact Me'
 				),
-				React.createElement(ReCATPCHA, {
-					className: 'contact-recaptcha',
-					refs: 'recaptcha',
-					sitekey: '6LduPvoSAAAAAOAlarIyHgQuhufOPoRdsju1STBC',
-					onChange: this.validate }),
-				React.createElement(ButtonInput, { id: 'submitButton', disabled: !this.state.valid, onClick: this.emailLink, bsStyle: 'primary', type: 'submit', value: 'Send an Email' })
+				React.createElement(
+					'form',
+					{ id: 'formAction', action: '#' },
+					React.createElement(ReCATPCHA, {
+						className: 'contact-recaptcha',
+						refs: 'recaptcha',
+						sitekey: '6LduPvoSAAAAAOAlarIyHgQuhufOPoRdsju1STBC',
+						onChange: this.validate }),
+					React.createElement(ButtonInput, { id: 'submitButton', disabled: !this.state.valid, bsStyle: 'primary', type: 'submit', value: 'Send an Email' })
+				)
 			);
 		}
 	});

@@ -2,33 +2,33 @@
 
 var _ = require('underscore');
 var React = require('react');
-var {Well, Input, ButtonInput} = require('react-bootstrap');
+var {Well, ButtonInput} = require('react-bootstrap');
 var ReCATPCHA = require("react-google-recaptcha");
 var partial = require('lodash.partial');
 var WorkCell = require('./WorkCell');
 
 var WorkWell = module.exports = React.createClass({
 	getInitialState: function() {
-    	return {name: false, email: false, message: false, captcha: false};
-  	},
-  	emailLink: function () {
-  		if (this.state.valid) {
-  			document.getElementByID('submitButton').href = "mailto:liam@songdickson.com";
-  		}
+    	return {valid: false};
   	},
 	validate: function (value) {
 		this.setState({valid: value});
+		if (value) {
+  			document.getElementById('formAction').action = "mailto:liam@songdickson.com";
+		}
 	},
 	render: function () {
 		return (
 			<Well>
 				<h2 id='contact'>Contact Me</h2>
-				<ReCATPCHA
-					className='contact-recaptcha'
-					refs="recaptcha"
-					sitekey="6LduPvoSAAAAAOAlarIyHgQuhufOPoRdsju1STBC"
-					onChange={this.validate}  />
-				<ButtonInput id='submitButton' disabled={!this.state.valid} onClick={this.emailLink} bsStyle='primary' type='submit' value='Send an Email' />
+				<form id='formAction' action='#'>
+					<ReCATPCHA
+						className='contact-recaptcha'
+						refs="recaptcha"
+						sitekey="6LduPvoSAAAAAOAlarIyHgQuhufOPoRdsju1STBC"
+						onChange={this.validate}  />
+					<ButtonInput id='submitButton' disabled={!this.state.valid} bsStyle='primary' type='submit' value='Send an Email' />
+				</form>
 			</Well>
 		)
 	}
