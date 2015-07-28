@@ -27,6 +27,7 @@
     "lodash.partial": "^3.1.0",
     "react": "^0.13.3",
     "react-bootstrap": "^0.23.5",
+    "react-google-recaptcha": "^0.3.2",
     "underscore": "^1.8.3"
   }
 }
