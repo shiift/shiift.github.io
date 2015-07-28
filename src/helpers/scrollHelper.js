@@ -1,10 +1,18 @@
 var $ = require('jquery');
+var _ = require('underscore');
 
-$(window).load(function() {
-	$('a[href^="#"]').click(function() {
+var scrollHelper = module.exports = {
+	scroll: function (event) {
+		if (event.preventDefault) {
+			event.preventDefault();
+		}
 		$('html, body').animate({
-			scrollTop: $($(this).attr('href')).offset().top - 100
+			scrollTop: $(event.target.getAttribute('href')).offset().top - 100
 		}, 1000);
-		return false;
-	});
-});
+	},
+	resumeScroll: function (func, event) {
+		event.preventDefault();
+		func(true);
+		_.delay(scrollHelper.scroll, 50, {target: event.target});
+	}
+};

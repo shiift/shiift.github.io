@@ -1,73 +1,98 @@
 'use strict';
 
+var _ = require('underscore');
 var React = require('react');
-var {Panel, Label, Row, Col, Well, Button} = require('react-bootstrap');
+var {Well, Button} = require('react-bootstrap');
 var partial = require('lodash.partial');
+var WorkCell = require('./WorkCell');
+var resumeScroll = require('./helpers/scrollHelper').resumeScroll;
 
-var TopWell = module.exports = React.createClass({
+var WorkWell = module.exports = React.createClass({
+	dibsTemplate: function () {
+		return (<div>
+			I currently work for an online marketplace called <a href='https://www.1stdibs.com'>1stdibs.com</a>, which
+			specializes in antiques and fine art. My responsibilities at 1stdibs include:
+			<ul>
+				<li>Implmeneting design changes and new website features</li>
+				<li>Writing unit tests in Jasmine and more specialized integration tests (to verify
+					back-end service behavior)</li>
+				<li>Using React, Backbone, and Node.js to create tools for developers (Chrome
+					extensions, test result database, etc.)</li>
+			</ul>
+		</div>);
+	},
+	utcTemplate: function () {
+		return (<div>
+			During the summers of my freshman and sophomore years at UConn I worked at United Technologies Aerospace Systems
+			where I worked on the F-15 weapons control system called the PACS (Programmable Armament Control Set). This
+			system is an embedded system that has been developed by United Technologies for many contries for decades. I was
+			fortunate enough to get an opportunity to work with a very experienced team of embedded software engineers and
+			testers to work on the newest version of this system for a few different countries. My responsibilities included:
+			<ul>
+				<li>Extensively testing the PACS unit for software and hardware bugs through autorig simulations and test
+					log analysis.</li>
+				<li>Writing macros, automated CTLS scripts and Perl scripts for testing of the PACS unit and presenting
+					results at weekly meetings.</li>
+				<li>Discussing various requirements and code issues with the project manager and test lead.</li>
+			</ul>
+		</div>);
+	},
+	becatTemplate: function () {
+		return (<div>
+			BECAT is a computing research center at the University of Connecticut. I began work with the BECAT support team
+			as the technical support person for the department, however, more recently I have been focusing my attention toward
+			helping the team with management of the <a target='_blank' href='http://becat.uconn.edu/hpc/'>computing cluster</a> and
+			creating tools for managing users of the cluster. My responsibilities at BECAT includes:
+			<ul>
+				<li>Maintaining personal computer systems for staff, faculty and students in the BECAT Research Center.</li>
+				<li>Providing technical support for issues including viruses, network problems, and malfunctioning hardware.</li>
+				<li>Help with High Performance Computing (HPC) support and overall cluster management (primarily using the
+					UNIX command line).</li>
+			</ul>
+		</div>)
+	},
+	csuTemplate: function () {
+		return (<div>
+			At Computer Services Unlimited I was responsible for interacting with customers throughout every step of the repair
+			process including the diagnostics, service estimates and the repair work itself. The business received multiple
+			repairs daily and after some time an intern was hired. I was given the responsibility of teaching and delegating work
+			to the new employees. The repair work included fixing software and hardware problems on all types of computers as well
+			as the occasional monitor and printer.
+		</div>)
+	},
 	render: function () {
-		var d = new Date();
-		var yr = d.getFullYear();
-		var mn = d.getMonth();
 		return (
 			<Well>
 				<h2 id='work'>Work Experience</h2>
 	            <p>The following is a list of the major jobs and internships I have had in my career. If you would like
-	            a more concise version of this information please see my <a href="#resume">Resume</a> below.</p>
-	            <Row>
-	            	<Col md={8}>
-			            <Panel bsStyle='primary' className='panel-left' header={<div>
-			            	<Row>
-			            		<Col sm={4}><a href='http://www.1stdibs.com'>1stdibs.com</a></Col>
-			            		<div className='col-sm-8 text-right'>
-				            		<Label className='padded-label' bsStyle='danger'>Front-End SDE Intern</Label>
-					            	<Label className='padded-label' bsStyle='warning'>Summer 2015 - Present</Label>
-				            	</div>
-			            	</Row>
-			            </div>}>
-			            	<div>
-				            	I currently work for an online marketplace called <a href='https://www.1stdibs.com'>1stdibs.com</a>, which
-				            	specializes in antiques and fine art. My responsibilities at 1stdibs include:
-				            	<ul>
-				            		<li>Implmeneting design changes and new website features</li>
-				            		<li>Writing unit tests in Jasmine and more specialized integration tests (to verify
-				            			back-end service behavior)</li>
-				            		<li>Using React, Backbone, and Node.js to create tools for developers (Chrome
-				            			extensions, test result database, etc.)</li>
-				            	</ul>
-			            	</div>
-			            </Panel>
-		            </Col>
-            	</Row>
-            	<Row>
-            		<Col md={8} mdOffset={4}>
-            			<Panel bsStyle='primary' className='panel-left' header={<div>
-			            	<Row>
-			            		<Col sm={4}><a href='http://www.utc.com'>United Technologies</a></Col>
-			            		<div className='col-sm-8 text-right'>
-				            		<Label className='padded-label' bsStyle='danger'>SDE Intern</Label>
-					            	<Label className='padded-label' bsStyle='warning'>May 2013 - February 2015</Label>
-				            	</div>
-			            	</Row>
-		            	</div>}>
-		            		<div>
-		            			During the summers of my freshman and sophomore years at UConn I worked at United Technologies Aerospace Systems
-		            			where I worked on the F-15 weapons control system called the PACS (Programmable Armament Control Set). This
-		            			system is an embedded system that has been developed by United Technologies for many contries for decades. I was
-		            			fortunate enough to get an opportunity to work with a very experienced team of embedded software engineers and
-		            			testers to work on the newest version of this system for a few different countries. My responsibilities included:
-		            			<ul>
-		            				<li>Extensively testing the PACS unit for software and hardware bugs through autorig simulations and test
-		            				log analysis.</li>
-		            				<li>Writing macros, automated CTLS scripts and Perl scripts for testing of the PACS unit and presenting
-		            				results at weekly meetings.</li>
-		            				<li>Discussing various requirements and code issues with the project manager and test lead.</li>
-		            			</ul>
-	            			</div>
-			            </Panel>
-		            </Col>
-	            </Row>
-	            <div id='resume'></div>
+	            a more concise version of this information please see my <a href="#resume"
+	            onClick={_.partial(resumeScroll, this.props.toggleResume)}>Resume</a> below.</p>
+	            <WorkCell
+	            	hName='1stdibs'
+	            	hLink='http://www.1stdibs.com/'
+	            	position='Front-End SDE Intern'
+	            	timeRange='Summer 2015 - Present'
+	            	template={this.dibsTemplate} />
+            	<WorkCell
+            		hName = 'United Technologies'
+            		hLink = 'http://www.utc.com/'
+            		position = 'SDE Intern'
+            		timeRange = 'May 2013 - February 2015'
+            		template={this.utcTemplate}
+            		alignRight />
+        		<WorkCell
+            		hName = 'BECAT Support'
+            		hLink = 'http://becat.uconn.edu/'
+            		position = 'Technical/HPC Support'
+            		timeRange = 'January 2013 - Present'
+            		template={this.becatTemplate} />
+        		<WorkCell
+            		hName = 'Computer Services Unlimited'
+            		hLink = '#'
+            		position = 'Head Computer Technician'
+            		timeRange = 'Summer 2012'
+            		template={this.csuTemplate}
+            		alignRight />
 			</Well>
 		)
 	}
