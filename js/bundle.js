@@ -40420,25 +40420,10 @@
 		getInitialState: function getInitialState() {
 			return { name: false, email: false, message: false, captcha: false };
 		},
-		validate: function validate(name, value) {
-			value = value.target.value;
-			this.setState(function () {
-				var obj = {};
-				obj[name] = value;
-				return obj;
-			});
-		},
-		validateEmail: function validateEmail(value) {
-			value = value.target.value;
-			if (/@.*\./.test(value)) {
-				this.setState({ email: value });
-			} else {
-				this.setState({ email: false });
-			}
+		validate: function validate(value) {
+			this.setState({ valid: value });
 		},
 		render: function render() {
-			console.log('send val:', EMAIL_SENT);
-			console.log('error val:', EMAIL_ERROR);
 			return React.createElement(
 				Well,
 				null,
@@ -40447,22 +40432,12 @@
 					{ id: 'contact' },
 					'Contact Me'
 				),
-				React.createElement(
-					'form',
-					{ method: 'post', action: '#contact' },
-					React.createElement(Input, { bsStyle: this.state.name ? 'success' : 'error', onChange: _.partial(this.validate, 'name'),
-						type: 'text', label: 'Name' }),
-					React.createElement(Input, { bsStyle: this.state.email ? 'success' : 'error', onChange: this.validateEmail,
-						type: 'email', label: 'Email' }),
-					React.createElement(Input, { bsStyle: this.state.message ? 'success' : 'error', onChange: _.partial(this.validate, 'message'),
-						type: 'textarea', label: 'Message', className: 'contact-message' }),
-					React.createElement(ReCATPCHA, {
-						className: 'contact-recaptcha',
-						refs: 'recaptcha',
-						sitekey: '6LduPvoSAAAAAOAlarIyHgQuhufOPoRdsju1STBC',
-						onChange: _.partial(this.validate, 'captcha') }),
-					React.createElement(ButtonInput, { disabled: !(this.state.name && this.state.email && this.state.message && this.state.recaptcha), bsStyle: 'primary', type: 'submit', value: 'Send' })
-				)
+				React.createElement(ReCATPCHA, {
+					className: 'contact-recaptcha',
+					refs: 'recaptcha',
+					sitekey: '6LduPvoSAAAAAOAlarIyHgQuhufOPoRdsju1STBC',
+					onChange: this.validate }),
+				React.createElement(ButtonInput, { disabled: !this.state.valid, bsStyle: 'primary', type: 'submit', value: 'Send' })
 			);
 		}
 	});

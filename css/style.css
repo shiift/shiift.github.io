@@ -20,10 +20,6 @@
 	height: 950px;
 }
 
-textarea.form-control.contact-message {
-	height: 300px;
-}
-
 .contact-recaptcha {
 	margin-bottom: 10px;
 }
