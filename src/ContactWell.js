@@ -8,11 +8,14 @@ var partial = require('lodash.partial');
 var WorkCell = require('./WorkCell');
 
 var WorkWell = module.exports = React.createClass({
+	getInitialState: function() {
+    	return {name: false, email: false, message: false, captcha: false};
+  	},
 	validate: function (value) {
 		if (value) {
 			this.setState({value: true});
 		}
-	}
+	},
 	render: function () {
 		return (
 			<Well>
