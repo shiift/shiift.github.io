@@ -6,7 +6,6 @@ var {Well, Input, ButtonInput} = require('react-bootstrap');
 var ReCATPCHA = require("react-google-recaptcha");
 var partial = require('lodash.partial');
 var WorkCell = require('./WorkCell');
-require('helpers/mailhider');
 
 var WorkWell = module.exports = React.createClass({
 	getInitialState: function() {
