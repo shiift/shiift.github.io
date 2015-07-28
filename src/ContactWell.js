@@ -23,7 +23,7 @@ var WorkWell = module.exports = React.createClass({
 					refs="recaptcha"
 					sitekey="6LduPvoSAAAAAOAlarIyHgQuhufOPoRdsju1STBC"
 					onChange={this.validate}  />
-				<ButtonInput disabled={!this.state.valid} href={this.state.valid ? 'liam@songdickson.com' : '#'} bsStyle='primary' type='submit' value='Send an Email' />
+				<ButtonInput disabled={!this.state.valid} href={this.state.valid ? 'mailto:liam@songdickson.com' : ''} bsStyle='primary' type='submit' value='Send an Email' />
 			</Well>
 		)
 	}
