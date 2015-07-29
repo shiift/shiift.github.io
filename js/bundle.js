@@ -39402,10 +39402,37 @@
 							'"Seeking an opportunity to further develop my skills as an engineer through real-world experience in software development and research while working toward my goal of becoming a software engineering manager"'
 						),
 						React.createElement(
-							Button,
-							{ onClick: _.partial(this.props.toggleResume, false), bsStyle: 'primary' },
-							this.props.expanded ? 'Hide' : 'Show',
-							' Resume'
+							Row,
+							null,
+							React.createElement(
+								Col,
+								{ md: 2, xs: 12 },
+								React.createElement(
+									Button,
+									{ target: '_blank', href: 'https://github.com/shiift', className: 'github padded-button' },
+									'Github'
+								)
+							),
+							React.createElement(
+								Col,
+								{ md: 2, xs: 6 },
+								React.createElement(
+									Button,
+									{ target: '_blank', href: 'https://www.linkedin.com/pub/william-dickson/70/5b2/521',
+										bsStyle: 'primary', className: 'padded-button' },
+									'LinkedIn'
+								)
+							),
+							React.createElement(
+								Col,
+								{ md: 8, xs: 6, className: 'text-right' },
+								React.createElement(
+									Button,
+									{ onClick: _.partial(this.props.toggleResume, false), bsStyle: 'danger', className: 'padded-button' },
+									this.props.expanded ? 'Hide' : 'Show',
+									' Resume'
+								)
+							)
 						)
 					)
 				)

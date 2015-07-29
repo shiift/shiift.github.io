@@ -24,9 +24,22 @@
 	margin-bottom: 10px;
 }
 
+.github {
+	background-color: #800080;
+	border-color: #800080;
+}
+
+.github:hover, .github.hover, .github:focus, .github.focus, .github:active, .github.active {
+	background-color: #700070;
+	border-color: #650065;
+}
+
 @media only screen and (max-width : 992px) {
 	.resume-pdf {
 		width: 100%;
 		height: 1000px;
+	}
+	.padded-button {
+		margin-top: 10px;
 	}
 }
