@@ -39531,6 +39531,13 @@
 				'At Computer Services Unlimited I was responsible for interacting with customers throughout every step of the repair process including the diagnostics, service estimates and the repair work itself. The business received multiple repairs daily and after some time an intern was hired. I was given the responsibility of teaching and delegating work to the new employees. The repair work included fixing software and hardware problems on all types of computers as well as the occasional monitor and printer.'
 			);
 		},
+		ctuTemplate: function ctuTemplate() {
+			return React.createElement(
+				'div',
+				null,
+				'Not to be confused with Computer Services Unlimited, Computer Trades is a the small business in West Hartford, Connecticut where I first developed my skills working with computers in a professional environment. I started as an intern during the summer of my Junior year in high school at followed the internship with a part-time position during the school year. I learned a great deal about how to solve problems using processes that since helped me with my work a software developer.'
+			);
+		},
 		render: function render() {
 			return React.createElement(
 				Well,
@@ -39579,6 +39586,13 @@
 					hLink: '#',
 					position: 'Head Computer Technician',
 					timeRange: 'Summer 2012',
+					template: this.csuTemplate,
+					alignRight: true }),
+				React.createElement(WorkCell, {
+					hName: 'Computer Trades Unlimited',
+					hLink: '#',
+					position: 'Computer Technician',
+					timeRange: 'June 2011 - June 2012',
 					template: this.csuTemplate,
 					alignRight: true })
 			);

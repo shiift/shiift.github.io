@@ -63,6 +63,14 @@ var WorkWell = module.exports = React.createClass({
 			as the occasional monitor and printer.
 		</div>)
 	},
+	ctuTemplate: function () {
+		return (<div>
+			Not to be confused with Computer Services Unlimited, Computer Trades is a the small business in West Hartford, Connecticut
+			where I first developed my skills working with computers in a professional environment. I started as an intern during the
+			summer of my Junior year in high school at followed the internship with a part-time position during the school year. I
+			learned a great deal about how to solve problems using processes that since helped me with my work a software developer.
+		</div>)
+	},
 	render: function () {
 		return (
 			<Well>
@@ -97,6 +105,13 @@ var WorkWell = module.exports = React.createClass({
             		hLink = '#'
             		position = 'Head Computer Technician'
             		timeRange = 'Summer 2012'
+            		template={this.csuTemplate}
+            		alignRight />
+        		<WorkCell
+            		hName = 'Computer Trades Unlimited'
+            		hLink = '#'
+            		position = 'Computer Technician'
+            		timeRange = 'June 2011 - June 2012'
             		template={this.csuTemplate}
             		alignRight />
 			</Well>
