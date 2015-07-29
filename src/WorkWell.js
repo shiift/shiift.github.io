@@ -11,7 +11,10 @@ var WorkWell = module.exports = React.createClass({
 	dibsTemplate: function () {
 		return (<div>
 			I currently work for an online marketplace called <a href='https://www.1stdibs.com'>1stdibs.com</a>, which
-			specializes in antiques and fine art. My responsibilities at 1stdibs include:
+			specializes in antiques and fine art. The company started as a kind of advertising business for dealers in
+			the New York City area, but has grown to become a leader in e-commerce for antique and fine art dealers
+			around the world. During my time at 1stdibs I have learned Javascript along with many front-end development
+			tools, workflows and coding conventions. My responsibilities at 1stdibs include:
 			<ul>
 				<li>Implmeneting design changes and new website features</li>
 				<li>Writing unit tests in Jasmine and more specialized integration tests (to verify
@@ -71,13 +74,15 @@ var WorkWell = module.exports = React.createClass({
 	            	hName='1stdibs'
 	            	hLink='http://www.1stdibs.com/'
 	            	position='Front-End SDE Intern'
-	            	timeRange='Summer 2015 - Present'
+	            	timeRange='May 2015 - Present'
+	            	img='http://i.imgur.com/vXud02e.png'
 	            	template={this.dibsTemplate} />
             	<WorkCell
             		hName = 'United Technologies'
             		hLink = 'http://www.utc.com/'
             		position = 'SDE Intern'
             		timeRange = 'May 2013 - February 2015'
+	            	img='http://i.imgur.com/uYf9XcT.png'
             		template={this.utcTemplate}
             		alignRight />
         		<WorkCell
@@ -85,6 +90,7 @@ var WorkWell = module.exports = React.createClass({
             		hLink = 'http://becat.uconn.edu/'
             		position = 'Technical/HPC Support'
             		timeRange = 'January 2013 - Present'
+            		img='http://i.imgur.com/khF3aCS.png'
             		template={this.becatTemplate} />
         		<WorkCell
             		hName = 'Computer Services Unlimited'

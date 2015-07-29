@@ -39444,7 +39444,7 @@
 					{ href: 'https://www.1stdibs.com' },
 					'1stdibs.com'
 				),
-				', which specializes in antiques and fine art. My responsibilities at 1stdibs include:',
+				', which specializes in antiques and fine art. The company started as a kind of advertising business for dealers in the New York City area, but has grown to become a leader in e-commerce for antique and fine art dealers around the world. During my time at 1stdibs I have learned Javascript along with many front-end development tools, workflows and coding conventions. My responsibilities at 1stdibs include:',
 				React.createElement(
 					'ul',
 					null,
@@ -39556,13 +39556,15 @@
 					hName: '1stdibs',
 					hLink: 'http://www.1stdibs.com/',
 					position: 'Front-End SDE Intern',
-					timeRange: 'Summer 2015 - Present',
+					timeRange: 'May 2015 - Present',
+					img: 'http://i.imgur.com/vXud02e.png',
 					template: this.dibsTemplate }),
 				React.createElement(WorkCell, {
 					hName: 'United Technologies',
 					hLink: 'http://www.utc.com/',
 					position: 'SDE Intern',
 					timeRange: 'May 2013 - February 2015',
+					img: 'http://i.imgur.com/uYf9XcT.png',
 					template: this.utcTemplate,
 					alignRight: true }),
 				React.createElement(WorkCell, {
@@ -39570,6 +39572,7 @@
 					hLink: 'http://becat.uconn.edu/',
 					position: 'Technical/HPC Support',
 					timeRange: 'January 2013 - Present',
+					img: 'http://i.imgur.com/khF3aCS.png',
 					template: this.becatTemplate }),
 				React.createElement(WorkCell, {
 					hName: 'Computer Services Unlimited',
@@ -40284,6 +40287,7 @@
 	var Label = _require.Label;
 	var Row = _require.Row;
 	var Col = _require.Col;
+	var Thumbnail = _require.Thumbnail;
 	var Well = _require.Well;
 	var Button = _require.Button;
 	
@@ -40298,7 +40302,7 @@
 				null,
 				React.createElement(
 					Col,
-					{ md: 8, mdOffset: this.props.alignRight ? 4 : 0 },
+					{ md: this.props.img ? 8 : 12, mdPush: this.props.alignRight && this.props.img ? 4 : 0 },
 					React.createElement(
 						Panel,
 						{ bsStyle: 'primary', className: 'panel-left', header: React.createElement(
@@ -40334,6 +40338,11 @@
 							) },
 						this.props.template()
 					)
+				),
+				React.createElement(
+					Col,
+					{ md: 4, mdPull: this.props.alignRight ? 8 : 0, className: 'hidden-xs hidden-sm' },
+					this.props.img ? React.createElement(Thumbnail, { target: '_blank', href: this.props.hLink, src: this.props.img }) : ''
 				)
 			);
 		}
@@ -40436,7 +40445,13 @@
 				React.createElement(
 					'h2',
 					{ id: 'contact' },
-					'Contact Me'
+					'Contact Me',
+					React.createElement('br', null),
+					React.createElement(
+						'small',
+						null,
+						'contact form coming soon'
+					)
 				),
 				React.createElement(
 					'form',
