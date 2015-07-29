@@ -25,6 +25,7 @@ var WorkWell = module.exports = React.createClass({
 		return (
 			<Well>
 				<h2 id='contact'>Contact Me<br /><small>contact form coming soon</small></h2>
+				<p>Please feel free to contact me about any questions you may have.</p>
 				<form id='formAction' action='#'>
 					<ReCATPCHA
 						className='contact-recaptcha'

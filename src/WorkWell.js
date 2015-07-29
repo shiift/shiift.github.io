@@ -69,7 +69,7 @@ var WorkWell = module.exports = React.createClass({
 				<h2 id='work'>Work Experience</h2>
 	            <p>The following is a list of the major jobs and internships I have had in my career. If you would like
 	            a more concise version of this information please see my <a href="#resume"
-	            onClick={_.partial(resumeScroll, this.props.toggleResume)}>Resume</a> below.</p>
+	            onClick={_.partial(resumeScroll, this.props.toggleResume)}>Resume</a>.</p>
 	            <WorkCell
 	            	hName='1stdibs'
 	            	hLink='http://www.1stdibs.com/'

@@ -39550,7 +39550,7 @@
 							onClick: _.partial(resumeScroll, this.props.toggleResume) },
 						'Resume'
 					),
-					' below.'
+					'.'
 				),
 				React.createElement(WorkCell, {
 					hName: '1stdibs',
@@ -40452,6 +40452,11 @@
 						null,
 						'contact form coming soon'
 					)
+				),
+				React.createElement(
+					'p',
+					null,
+					'Please feel free to contact me about any questions you may have.'
 				),
 				React.createElement(
 					'form',
