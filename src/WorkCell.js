@@ -18,7 +18,7 @@ var WorkCell = module.exports = React.createClass({
 			            	</div>
 		            	</Row>
 		            </div>}>
-		            	{this.props.template()}
+		            	{this.props.children}
 		            </Panel>
 	            </Col>
 	            <Col md={4} mdPull={this.props.alignRight ? 8 : 0} className='hidden-xs hidden-sm'>
