@@ -25,6 +25,7 @@ var WorkWell = module.exports = React.createClass({
 	        'g-recaptcha-response': this.state.valid 
 	    }, (data, status)=>{
 	        var response = JSON.parse(data);
+	        grecaptcha.reset();
         	this.setState({response: response});
 	    });
 	},
@@ -35,13 +36,13 @@ var WorkWell = module.exports = React.createClass({
 		var alert = '';
 		if (this.state.response) {
 			if (this.state.response.success) {
-				alert = <Alert bsStyle='success' onDismiss={this.handleAlertDismiss} dismissAfter={5000}>
+				alert = (<Alert bsStyle='success' onDismiss={this.handleAlertDismiss} dismissAfter={5000}>
 			          		<h4>Email successfully sent!</h4>
-				        </Alert>
+				        </Alert>);
 			} else {
-				alert = <Alert bsStyle='danger' onDismiss={this.handleAlertDismiss} dismissAfter={5000}>
+				alert = (<Alert bsStyle='danger' onDismiss={this.handleAlertDismiss} dismissAfter={5000}>
 			          		<h4>Email form encountered an error!</h4>
-				        </Alert>
+				        </Alert>);
 			}
 		}
 		return (

@@ -40485,6 +40485,7 @@
 				'g-recaptcha-response': this.state.valid
 			}, function (data, status) {
 				var response = JSON.parse(data);
+				grecaptcha.reset();
 				_this.setState({ response: response });
 			});
 		},
