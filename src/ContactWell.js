@@ -21,7 +21,8 @@ var WorkWell = module.exports = React.createClass({
 		var message = this.refs.message.getValue();
 		$.post("http://vps.liamd.com/mail.php", {
 	        from: from,
-	        message: message
+	        message: message,
+	        'g-recaptcha-response': this.state.valid 
 	    }, (data, status)=>{
 	        var response = JSON.parse(data);
         	this.setState({response: response});

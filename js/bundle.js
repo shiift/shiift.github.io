@@ -40481,7 +40481,8 @@
 			var message = this.refs.message.getValue();
 			$.post('http://vps.liamd.com/mail.php', {
 				from: from,
-				message: message
+				message: message,
+				'g-recaptcha-response': this.state.valid
 			}, function (data, status) {
 				var response = JSON.parse(data);
 				_this.setState({ response: response });
