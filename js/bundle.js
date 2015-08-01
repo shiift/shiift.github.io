@@ -40450,6 +40450,7 @@
 	'use strict';
 	
 	var _ = __webpack_require__(232);
+	var $ = __webpack_require__(233);
 	var React = __webpack_require__(2);
 	
 	var _require = __webpack_require__(160);
@@ -40457,6 +40458,7 @@
 	var Well = _require.Well;
 	var ButtonInput = _require.ButtonInput;
 	var Input = _require.Input;
+	var Alert = _require.Alert;
 	
 	var ReCATPCHA = __webpack_require__(247);
 	var partial = __webpack_require__(238);
@@ -40470,15 +40472,49 @@
 		},
 		validate: function validate(value) {
 			this.setState({ valid: value });
-			if (value) {
-				var email = 'mail';
-				email += 'to';
-				email += ':liam';
-				email += '@songdickson.com';
-				document.getElementById('formAction').action = email;
-			}
+		},
+		sendEmail: function sendEmail(e) {
+			var _this = this;
+	
+			e.preventDefault();
+			var from = this.refs.from.getValue();
+			var message = this.refs.message.getValue();
+			$.post('http://vps.liamd.com/mail.php', {
+				from: from,
+				message: message
+			}, function (data, status) {
+				var response = JSON.parse(data);
+				_this.setState({ response: response });
+			});
+		},
+		handleAlertDismiss: function handleAlertDismiss() {
+			this.setState({ response: null });
 		},
 		render: function render() {
+			var alert = '';
+			if (this.state.response) {
+				if (this.state.response.success) {
+					alert = React.createElement(
+						Alert,
+						{ bsStyle: 'success', onDismiss: this.handleAlertDismiss, dismissAfter: 5000 },
+						React.createElement(
+							'h4',
+							null,
+							'Email successfully sent!'
+						)
+					);
+				} else {
+					alert = React.createElement(
+						Alert,
+						{ bsStyle: 'danger', onDismiss: this.handleAlertDismiss, dismissAfter: 5000 },
+						React.createElement(
+							'h4',
+							null,
+							'Email form encountered an error!'
+						)
+					);
+				}
+			}
 			return React.createElement(
 				Well,
 				null,
@@ -40487,6 +40523,7 @@
 					{ id: 'contact' },
 					'Contact Me'
 				),
+				alert,
 				React.createElement(
 					'p',
 					null,
@@ -40494,15 +40531,15 @@
 				),
 				React.createElement(
 					'form',
-					{ id: 'formAction', action: 'http://vps.liamd.com/mail.php' },
-					React.createElement(Input, { type: 'text', label: 'Email', name: 'from' }),
-					React.createElement(Input, { type: 'textarea', label: 'Message', name: 'message' }),
+					{ id: 'formAction', onSubmit: this.sendEmail },
+					React.createElement(Input, { type: 'text', ref: 'from', label: 'Email', name: 'from' }),
+					React.createElement(Input, { type: 'textarea', ref: 'message', label: 'Message', name: 'message' }),
 					React.createElement(ReCATPCHA, {
 						className: 'contact-recaptcha',
 						refs: 'recaptcha',
 						sitekey: '6LduPvoSAAAAAOAlarIyHgQuhufOPoRdsju1STBC',
 						onChange: this.validate }),
-					React.createElement(ButtonInput, { id: 'submitButton', disabled: !this.state.valid, bsStyle: 'primary', type: 'submit', value: 'Send an Email' })
+					React.createElement(ButtonInput, { id: 'submitButton', disabled: this.state.valid, bsStyle: 'primary', type: 'submit', value: 'Send an Email' })
 				)
 			);
 		}
