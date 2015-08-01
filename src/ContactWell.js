@@ -56,7 +56,7 @@ var WorkWell = module.exports = React.createClass({
 						refs="recaptcha"
 						sitekey="6LduPvoSAAAAAOAlarIyHgQuhufOPoRdsju1STBC"
 						onChange={this.validate} />
-					<ButtonInput id='submitButton' disabled={this.state.valid} bsStyle='primary' type='submit' value='Send an Email' />
+					<ButtonInput id='submitButton' disabled={!this.state.valid} bsStyle='primary' type='submit' value='Send an Email' />
 				</form>
 			</Well>
 		)
