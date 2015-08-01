@@ -40539,7 +40539,7 @@
 						refs: 'recaptcha',
 						sitekey: '6LduPvoSAAAAAOAlarIyHgQuhufOPoRdsju1STBC',
 						onChange: this.validate }),
-					React.createElement(ButtonInput, { id: 'submitButton', disabled: this.state.valid, bsStyle: 'primary', type: 'submit', value: 'Send an Email' })
+					React.createElement(ButtonInput, { id: 'submitButton', disabled: !this.state.valid, bsStyle: 'primary', type: 'submit', value: 'Send an Email' })
 				)
 			);
 		}
