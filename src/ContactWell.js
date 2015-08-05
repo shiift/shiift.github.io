@@ -52,12 +52,18 @@ var WorkWell = module.exports = React.createClass({
 				<p>Please feel free to contact me!</p>
 				<form id='formAction' onSubmit={this.sendEmail}>
 					<Input type='text' ref='from' label='Email' name='from' />
-					<Input type='textarea' ref='message' label='Message' name='message' />
-					<ReCATPCHA
-						className='contact-recaptcha'
-						refs="recaptcha"
-						sitekey="6LduPvoSAAAAAOAlarIyHgQuhufOPoRdsju1STBC"
-						onChange={this.validate} />
+					<div className='form-group'>
+						<label className='control-label'>Message</label>
+						<textarea style={{resize: 'vertical'}} rows='10' name='message' className='form-control' />
+					</div>
+					<div className='form-group'>
+						<label className='control-label'>ReCATPCHA</label>
+						<ReCATPCHA
+							className='contact-recaptcha'
+							refs="recaptcha"
+							sitekey="6LduPvoSAAAAAOAlarIyHgQuhufOPoRdsju1STBC"
+							onChange={this.validate} />
+					</div>
 					<ButtonInput id='submitButton' disabled={!this.state.valid} bsStyle='primary' type='submit' value='Send an Email' />
 				</form>
 			</Well>
