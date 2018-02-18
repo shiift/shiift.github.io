@@ -4,7 +4,7 @@ var _ = require('underscore');
 var React = require('react');
 var {Row, Col, Well, Button} = require('react-bootstrap');
 
-var TopWell = module.exports = React.createClass({
+module.exports = React.createClass({
 	render: function () {
 		return (
 			<Well id="home">

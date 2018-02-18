@@ -4,7 +4,7 @@ var React = require('react');
 var PageNav = require('./PageNav');
 var PageBody = require('./PageBody');
 
-var PageWrapper = module.exports = React.createClass({
+module.exports = React.createClass({
 	getInitialState: function() {
     	return {resume: false};
   	},

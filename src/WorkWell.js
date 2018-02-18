@@ -2,12 +2,11 @@
 
 var _ = require('underscore');
 var React = require('react');
-var {Well, Button} = require('react-bootstrap');
-var partial = require('lodash.partial');
+var {Well} = require('react-bootstrap');
 var WorkCell = require('./WorkCell');
 var resumeScroll = require('./helpers/scrollHelper').resumeScroll;
 
-var WorkWell = module.exports = React.createClass({
+module.exports = React.createClass({
 	render: function () {
 		return (
 			<Well>
@@ -20,7 +19,7 @@ var WorkWell = module.exports = React.createClass({
 	            	hLink='http://www.1stdibs.com/'
 	            	position='Front-End SDE Intern'
 	            	timeRange='May 2015 - Present'
-	            	img='http://i.imgur.com/vXud02e.png'>
+	            	img='images/vXud02e.png'>
 	            	<div>
 						I currently work for an online marketplace, <a target='_blank' href='https://www.1stdibs.com'>1stdibs.com</a>, which
 						specializes in antiques and fine art. The company started as a kind of advertising business for dealers in
@@ -41,7 +40,7 @@ var WorkWell = module.exports = React.createClass({
             		hLink = 'http://www.utc.com/'
             		position = 'SDE Intern'
             		timeRange = 'May 2013 - February 2015'
-	            	img='http://i.imgur.com/uYf9XcT.png'
+	            	img='images/uYf9XcT.png'
             		alignRight>
             		<div>
 						During the summers of my freshman and sophomore years at UConn I worked at United Technologies Aerospace Systems
@@ -63,7 +62,7 @@ var WorkWell = module.exports = React.createClass({
             		hLink = 'http://becat.uconn.edu/'
             		position = 'Technical/HPC Support'
             		timeRange = 'January 2013 - Present'
-            		img='http://i.imgur.com/khF3aCS.png'>
+            		img='images/khF3aCS.png'>
             		<div>
 						BECAT is a computing research center at the University of Connecticut. I began work with the BECAT support team
 						as the technical support person for the department, however, more recently I have been focusing my attention toward

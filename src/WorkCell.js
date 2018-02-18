@@ -1,10 +1,9 @@
 'use strict';
 
 var React = require('react');
-var {Panel, Label, Row, Col, Thumbnail, Well, Button} = require('react-bootstrap');
-var partial = require('lodash.partial');
+var {Panel, Label, Row, Col, Thumbnail} = require('react-bootstrap');
 
-var WorkCell = module.exports = React.createClass({
+module.exports = React.createClass({
 	render: function () {
 		return (
             <Row>

@@ -2,10 +2,8 @@
 
 var React = require('react');
 var {Panel, Button} = require('react-bootstrap');
-var partial = require('lodash.partial');
-var WorkCell = require('./WorkCell');
 
-var ResumePanel = module.exports = React.createClass({
+module.exports = React.createClass({
 	render: function () {
 		return (
 			<Panel collapsible expanded={this.props.expanded} className='panel-noborder'>

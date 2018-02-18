@@ -1,7 +1,7 @@
 var $ = require('jquery');
 var _ = require('underscore');
 
-var scrollHelper = module.exports = {
+module.exports = {
 	scroll: function (event) {
 		if (event.preventDefault) {
 			event.preventDefault();
