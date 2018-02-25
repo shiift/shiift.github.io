@@ -27,7 +27,7 @@ function Resume(props) {
       <Hidden implementation='css' mdUp>
         <div className={props.classes.resumeCardSmall}>
           <Document loading="" className="resume" file="/resume.pdf">
-            <Page scale={0.58} pageNumber={1} />
+            <Page scale={0.50} pageNumber={1} />
           </Document>
         </div>
       </Hidden>
