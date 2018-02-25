@@ -6,6 +6,7 @@ import Reboot from 'material-ui/Reboot';
 // It's optional.
 const theme = createMuiTheme({
   palette: {
+    type: "dark",
     primary: {
       light: '#C5CAE9',
       main: '#3F51B5',

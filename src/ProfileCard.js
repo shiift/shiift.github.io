@@ -21,17 +21,24 @@ const styles = theme => ({
     height: 60,
   },
   button: {
+    marginTop: theme.spacing.unit,
     marginBottom: theme.spacing.unit,
   },
   githubButton: {
     backgroundColor: '#181717',
+    '&:hover': {
+      backgroundColor: '#000000',
+    },
   },
   linkedinButton: {
     backgroundColor: '#0077B5',
+    '&:hover': {
+      backgroundColor: '#004b72',
+    },
   },
   icon: {
-    width: 30,
-    height: 30,
+    width: 25,
+    height: 25,
   },
 });
 
@@ -49,7 +56,7 @@ function SimpleCard(props) {
         }
       />
       <CardContent className={classes.details}>
-        <Typography>Working to develop my skills as an engineer by tacking large-scale real-world problems in software engineering.</Typography>
+        <Typography>Working to develop my skills as an engineer by tackling large-scale real-world problems in software engineering.</Typography>
       </CardContent>
       <CardActions>
         <Button className={classnames(classes.button, classes.githubButton)} variant="raised" target="_blank" href="https://github.com/shiift/">

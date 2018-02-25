@@ -9,6 +9,7 @@ import './Resume.css';
 
 const styles = theme => ({
   button: {
+    marginTop: theme.spacing.unit,
     marginBottom: theme.spacing.unit,
   },
   resumeCardLarge: {

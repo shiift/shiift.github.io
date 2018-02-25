@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Card, { CardHeader, CardContent } from 'material-ui/Card';
+import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import Divider from 'material-ui/Divider';
+import amazon from './icons/amazon.svg';
 
 const styles = theme => ({
   card: {
@@ -21,6 +23,20 @@ const styles = theme => ({
   titleBox: {
     marginBottom: 16,
   },
+  amazonButton: {
+    color: '#FFFFFF',
+    backgroundColor: '#cf00c2',
+    marginTop: theme.spacing.unit,
+    marginBottom: theme.spacing.unit,
+    '&:hover': {
+      backgroundColor: '#8e0085',
+    },
+  },
+  icon: {
+    paddingLeft: theme.spacing.unit,
+    width: 25,
+    height: 25,
+  },
 });
 
 function SimpleCard(props) {
@@ -28,13 +44,30 @@ function SimpleCard(props) {
   return (
     <Card id="work" className={classes.card}>
       <CardHeader title="Work Experience" />
+      <CardContent>
+        <div className={classes.titleBox}>
+          <Typography className={classes.title}>Amazon.com - Amazon Spark</Typography>
+          <Typography className={classes.subtitle}>May 2017 - Present</Typography>
+        </div>
+        <Typography paragraph>More recently I have worked on the Amazon Spark team where we launched our product allowing people to
+        discover, share, and shop their interests. On this team I have worked to develop many features including adding products on
+        Spark to the Amazon wishlist, tagged interest recommendations while posting, and integration with partner teams such as
+        Amazon Ask (Question and Answers).</Typography>
+        <Button className={classes.amazonButton} variant="raised" target="_blank" href="https://www.amazon.com/b?node=16907772011">
+          About Spark
+          <img className={classes.icon} src={amazon} alt="Amazon Spark" />
+        </Button>
+      </CardContent>
       <Divider />
       <CardContent>
         <div className={classes.titleBox}>
-          <Typography className={classes.title}>Amazon.com</Typography>
-          <Typography className={classes.subtitle}>August 2016 - Present</Typography>
+          <Typography className={classes.title}>Amazon.com - Seller Pricing</Typography>
+          <Typography className={classes.subtitle}>August 2016 - May 2017</Typography>
         </div>
-        <Typography paragraph>For my first year at Amazon I worked in the Marketplace organization on the Seller Pricing team.</Typography>
+        <Typography paragraph>During my first year at Amazon I worked in the Marketplace organization on the Seller Pricing team.
+        I started on the Seller Pricing team in Marketplace developing systems that react to price change events for third party
+        sellers on Amazon.com. These systems controlled features ranging from real-time price error handling, to seller facing APIs,
+        to pricing-related dashboards.</Typography>
       </CardContent>
       <Divider />
       <CardContent>
