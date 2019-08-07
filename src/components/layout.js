@@ -6,6 +6,7 @@ import { rhythm } from "../utils/typography"
 class Layout extends React.Component {
   render() {
     const { location, title, subtitle, children } = this.props
+    // eslint-disable-next-line
     const rootPath = `${__PATH_PREFIX__}/`
     let header
 

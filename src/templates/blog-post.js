@@ -12,6 +12,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const subtitle = this.props.data.site.siteMetadata.subtitle
     const { previous, next } = this.props.pageContext
+    const endDate = post.frontmatter.present ? "Present" : post.frontmatter.endDate
 
     return (
       <Layout location={this.props.location} title={siteTitle} subtitle={subtitle}>
@@ -34,7 +35,7 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         >
-          {post.frontmatter.date} - {post.frontmatter.endDate}
+          {post.frontmatter.date} - {endDate}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
@@ -94,6 +95,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM, YYYY")
         endDate(formatString: "MMMM, YYYY")
+        present
         description
       }
     }

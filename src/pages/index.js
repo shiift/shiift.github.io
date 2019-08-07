@@ -20,8 +20,14 @@ class BlogIndex extends React.Component {
         <h3>Work Experience</h3>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
+          const endDate = node.frontmatter.present ? "Present" : node.frontmatter.endDate
           return (
-            <div key={node.fields.slug}>
+            <div style={{
+              borderRadius: "25px",
+              padding: rhythm(3 / 4),
+              backgroundColor: "#EEE",
+              marginBottom: rhythm(1),
+            }} key={node.fields.slug}>
               <h3
                 style={{
                   marginBottom: rhythm(1 / 4),
@@ -31,7 +37,7 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date} - {node.frontmatter.endDate}</small>
+              <small>{node.frontmatter.date} - {endDate}</small>
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
@@ -41,7 +47,7 @@ class BlogIndex extends React.Component {
           )
         })}
         <h3>Resume</h3>
-        <p>See my resume <a href="/resume.pdf">here</a>.</p>
+        <p>See <a href="/resume.pdf">my resume here</a>.</p>
       </Layout>
     )
   }
@@ -67,6 +73,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM, YYYY")
             endDate(formatString: "MMMM, YYYY")
+            present
             title
             description
           }

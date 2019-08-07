@@ -32,6 +32,15 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: "gatsby-plugin-preconnect",
+            options: {
+              domains: [
+                "https://www.google.com",
+                "https://marketingplatform.google.com"
+              ]
+            }
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
@@ -67,7 +76,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        // icon: `content/assets/faceshot.jpg`,
+        icon: `content/assets/icon.png`,
       },
     },
     `gatsby-plugin-offline`,

@@ -79,12 +79,14 @@ const Bio = () => {
       </div>
       <div>
         <a
+          aria-label="Visit my Github"
           style={Object.assign({}, buttonStyle, { backgroundColor: "#000", backgroundImage: "url(" + svgPath + "github.svg)" })}
-          href={`https://github.com/${social.github}`} />
+          href={`https://github.com/${social.github}`}><span style={{display: "none"}}>Github</span></a>
         {` `}
         <a
+          aria-label="Connect with me on LinkedIn"
           style={Object.assign({}, buttonStyle, { backgroundColor: "#0077B5", backgroundImage: "url(" + svgPath + "linkedin.svg)" })}
-          href={`https://linkedin.com/in/${social.linkedIn}`} />
+          href={`https://linkedin.com/in/${social.linkedIn}`}><span style={{display: "none"}}>LinkedIn</span></a>
         {` `}
         <span style={Object.assign({}, buttonStyle, {
           background: "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)",
@@ -92,8 +94,9 @@ const Bio = () => {
           padding: "none",
         })}>
           <a
+            aria-label="Follow me and my dog on Instagram"
             style={Object.assign({}, buttonStyle, { backgroundColor: "none", backgroundImage: "url(" + svgPath + "instagram.svg)" })}
-            href={`https://instagram.com/${social.instagram}`} />
+            href={`https://instagram.com/${social.instagram}`}><span style={{display: "none"}}>Instagram</span></a>
         </span>
       </div>
     </div>
