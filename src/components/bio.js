@@ -75,7 +75,7 @@ const Bio = () => {
             borderRadius: `50%`,
           }}
         />
-        <p>Working to develop my skills as a software engineer by tackling large-scale problems in software.</p>
+        <p>Continuing my passion for building high performing and independent engineering teams responsible for delviering highly available, low latency, and maintainable distributed software systems for customers.</p>
       </div>
       <div>
         <a
