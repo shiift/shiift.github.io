@@ -32,7 +32,7 @@ class Layout extends React.Component {
       header = (
         <div>
           {titleComponent}
-          <h3>{subtitle}</h3>
+          <h2>{subtitle}</h2>
         </div>
       )
     } else {

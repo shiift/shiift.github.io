@@ -2,7 +2,7 @@
 module.exports = {
   siteMetadata: {
     title: `Liam Dickson`,
-    subtitle: `Software Development Engineer`,
+    subtitle: `Software Development Manager`,
     author: `Liam Dickson`,
     description: `Liam's Github Pages Website.`,
     siteUrl: `https://www.liamd.com/`,
